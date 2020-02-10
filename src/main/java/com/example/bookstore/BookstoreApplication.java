@@ -22,9 +22,9 @@ public class BookstoreApplication {
 	public CommandLineRunner studentDemo(BookRepository repository) {
 		return (args) -> {
 			log.info("save a couple of books");
-			repository.save(new Book("A Farewell to arms", "Ernest Hemingway", 1929, "123123-1", 30));
-			repository.save(new Book("Animal farm", "George Orwell", 1945, "121212-1", 15));
-			
+			repository.save(new Book("Meidän Tomppa", "Kristiina Louhi", 2004, "9789513101732", 16.7));
+			repository.save(new Book("Pää edellä", "Tiina Huttu", 2017, "9789510424087", 11.6));
+			repository.save(new Book("Uhmakirja", "Malin Alfvén", 2012, "9789513167257", 29));
 
 			log.info("fetch all books");
 			for (Book book : repository.findAll()) {
