@@ -1,13 +1,25 @@
 package com.example.bookstore;
 
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.jupiter.api.extension.ExtendWith;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import com.example.bookstore.web.BookController;
+
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
 class BookstoreApplicationTests {
 
+	@Autowired
+	private BookController bookController;
+	
 	@Test
-	void contextLoads() {
+	void contextLoads() throws Exception{
+		assertThat(bookController).isNotNull();
 	}
 
 }
